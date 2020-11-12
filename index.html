@@ -1,0 +1,13 @@
+{% extends "./default.html" %}
+{% import "./public/adsPannel.html" as adsPannel %}
+{% block content %}
+
+<div class="layui-container">
+  <div class="layui-row layui-col-space15 main">
+    <div class="layui-col-md9 layui-col-lg9">
+      {%include './public/itemListTemp.html' %}
+    </div>
+    {% include './public/sidebar.html' %}
+  </div>
+</div>
+{% endblock %}

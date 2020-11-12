@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+    <link rel="stylesheet" href="{{staticThemePath}}/libs/layui/css/layui.css">
+    <link rel="stylesheet" href="{{staticThemePath}}/css/style.css">
+
+
+</head>
+
+
+<body class="is-preload {{body_class}}">
+
+    <!-- Nav -->
+    {% include "./public/header.html" %}
+
+    <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+    {% block content %}{% endblock %}
+
+    <!-- The footer at the very bottom of the screen -->
+
+    {% include "./public/footer.html" %}
+
+
+
+</body>
+
+</html>

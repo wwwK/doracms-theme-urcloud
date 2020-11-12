@@ -1,0 +1,18 @@
+{% for item in posts %}
+<div class="title-article list-card">
+	<div class="list-pic"><a href="{{item.url}}" title="{{item.title}}"><img src="{{item.sImg}}" alt="{{item.title}}"
+				class="img-full"></a></div>
+	<a href="{{item.url}}">
+		<h1>{{item.title}}</h1>
+		<p>
+			{{item.discription}}
+		</p>
+	</a>
+	<div class="title-msg">
+		<span><i class="layui-icon">&#xe705;</i> <?php $this->category(','); ?></span>
+		<span><i class="layui-icon">&#xe60e;</i> <?php $this->date('Y-m-d'); ?> </span>
+		<span><i class="layui-icon">&#xe756;</i> <?php get_post_view($this); ?></span>
+	</div>
+</div>
+{% endfor %}
+{% include "./pagination.html" %}

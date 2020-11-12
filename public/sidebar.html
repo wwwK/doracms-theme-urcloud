@@ -1,0 +1,62 @@
+<div class="sidebar layui-col-md3 layui-col-lg3">
+    <div class="component">
+        <form class="layui-form" name="searchform" id="searchform">
+            <div class="layui-inline input">
+                <input name="keyboard" id="keyboard" required lay-verify="required" class="layui-input"
+                    placeholder="请输入关键字词" type="text">
+                <input name="show" value="title" type="hidden">
+                <input name="tempid" value="1" type="hidden">
+                <input name="tbname" value="news" type="hidden">
+            </div>
+            <div class="layui-inline">
+                <button class="layui-btn layui-btn-sm layui-btn-primary"><i class="layui-icon">&#xe615;</i></button>
+            </div>
+        </form>
+    </div>
+    <div class="column">
+        <h3 class="title-sidebar"><i class="layui-icon">&#xe705;</i>栏目分类</h3>
+        <ul class="layui-row layui-col-space5">
+            {% for cate in navigation %}
+            {% if cate.parentId == '0' %}
+            <li lass="layui-col-md12 layui-col-xs6">
+                <a href="{{cate.url}}"><i class="layui-icon">&#xe63c;</i>{{cate.name}}<span
+                        class="layui-badge layui-bg-gray">{{cate.postCount}}</span></a>
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="column">
+        <h3 class="title-sidebar"><i class="layui-icon">&#xe756;</i>站长推荐</h3>
+        <ul class="layui-row layui-col-space5">
+            {% recommend key="srecommend",pageSize=8 %}
+            {% if srecommend.length > 0 %}
+            {% for item in srecommend %}
+            <li><a href="{{item.url}}">{{item.stitle}}</a></li>
+            {% endfor %}
+            {% endif %}
+        </ul>
+    </div>
+    <div class="tags">
+        <h3 class="title-sidebar"><i class="layui-icon">&#xe66e;</i>标签云</h3>
+        <div>
+
+            {% hottags pageSize=20 %}
+            {% for tagItem in hottags %}
+            <a class="layui-btn layui-btn-xs layui-btn-primary" href="{{tagItem.url}}"
+                target="_blank">{{tagItem.name}}</a>
+            {% endfor %}
+
+
+
+        </div>
+    </div>
+    <div class="link">
+        <h3 class="title-sidebar"><i class="layui-icon">&#xe64c;</i>友情链接</h3>
+        <div class="friends-link">
+            {% ads name="frendlink" %}
+            {{adsPannel.slider(frendlink)}}
+        </div>
+    </div>
+</div>
