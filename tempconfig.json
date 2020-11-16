@@ -1,7 +1,7 @@
 [{
-    "name": "urcloud",
-    "alias": "urcloud",
+    "name": "doracms-theme-urcloud",
+    "alias": "doracms-theme-urcloud",
     "version": "2.1.7",
     "author": "doracms",
-    "comment": "https://www.urcloud.co/"
+    "comment": "https://github.com/zenonux/doracms-theme-urcloud"
 }]

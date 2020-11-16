@@ -195,16 +195,18 @@ textarea {
 }
 .logo {
   position: absolute;
-  left: 0;
+  left: 10px;
   top: 0;
   height: 60px;
+  line-height: 60px;
   overflow: hidden;
   font-size: 1.4em;
 }
-.logo img {
-  max-height: 100%;
+@media screen and (max-width: 768px) {
+  .logo {
+    left: 25px;
+  }
 }
-
 .header .layui-nav {
   position: absolute;
   right: 0;
@@ -392,6 +394,7 @@ textarea {
 
 .copy-text {
   color: #666;
+  word-break: break-all;
 }
 
 .copy-text div {
