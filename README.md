@@ -6,14 +6,14 @@
 
 [URCloud](https://www.urcloud.co)
 
-### 模版
+### 模版页面
 
-- 首页
-- 分类页
-- 详情页
-- 归档页（单页）
-- 关于我（单页）
-- 404
+- 首页(index.html)
+- 分类页(page.html)
+- 详情页(post.html)
+- 归档页（archive.html 单页）
+- 关于我（about.html 单页）
+- 404(404.html)
 
 ### 功能
 
