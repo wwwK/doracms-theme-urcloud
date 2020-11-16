@@ -8,6 +8,13 @@ layui.use(['layer', 'element', 'util'], function () {
         $('.nav-btn dl').toggleClass('layui-show');
     });
 
+    // 搜索
+    $('#searchform').submit(function (e) {
+        e.preventDefault();
+        var searchkey = $('#keyboard').val()
+        window.location.href = '/search/' + searchkey
+    })
+
 
     //文章图片点击事件(如果为pc端才生效)
     var device = layui.device();

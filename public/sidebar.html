@@ -2,15 +2,10 @@
     <div class="component" ms-controller="headerCtr">
         <form class="layui-form" name="searchform" id="searchform">
             <div class="layui-inline input">
-                <input name="keyboard" id="keyboard" ms-on-keyup="@onKeyUp" ms-duplex="@searchkey" required
-                    lay-verify="required" class="layui-input" placeholder="请输入关键字词" type="text">
-                <input name="show" value="title" type="hidden">
-                <input name="tempid" value="1" type="hidden">
-                <input name="tbname" value="news" type="hidden">
+                <input name="keyboard" id="keyboard" required class="layui-input" placeholder="请输入关键字词" type="text">
             </div>
             <div class="layui-inline">
-                <button ms-click="@onKeyUp" class="layui-btn layui-btn-sm layui-btn-primary"><i
-                        class="layui-icon">&#xe615;</i></button>
+                <button class="layui-btn layui-btn-sm layui-btn-primary"><i class="layui-icon">&#xe615;</i></button>
             </div>
         </form>
     </div>
