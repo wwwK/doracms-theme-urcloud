@@ -9,9 +9,9 @@
 		</p>
 	</a>
 	<div class="title-msg">
-		<span><i class="layui-icon">&#xe705;</i> <?php $this->category(','); ?></span>
-		<span><i class="layui-icon">&#xe60e;</i> <?php $this->date('Y-m-d'); ?> </span>
-		<span><i class="layui-icon">&#xe756;</i> <?php get_post_view($this); ?></span>
+		<span><i class="layui-icon">&#xe705;</i> {{item.categories[0].name}}</span>
+		<span><i class="layui-icon">&#xe60e;</i> {{item.createdAt | truncate(10,True,'')}} </span>
+		<span><i class="layui-icon">&#xe756;</i> {{item.clickNum}}</span>
 	</div>
 </div>
 {% endfor %}

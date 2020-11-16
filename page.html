@@ -6,7 +6,11 @@
         <div class="map">
             <span class="layui-breadcrumb">
                 <a href="/">首页</a>
+                {% if pageType != 'search' and pageType != 'tag' %}
+                <a href="{{cateInfo.url}}"><cite>{{list_title}}</cite></a>
+                {% else %}
                 <a><cite>{{list_title}}</cite></a>
+                {% endif %}
             </span>
         </div>
         <div class="layui-col-md9 layui-col-lg9">

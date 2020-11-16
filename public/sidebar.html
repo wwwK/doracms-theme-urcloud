@@ -1,15 +1,16 @@
 <div class="sidebar layui-col-md3 layui-col-lg3">
-    <div class="component">
+    <div class="component" ms-controller="headerCtr">
         <form class="layui-form" name="searchform" id="searchform">
             <div class="layui-inline input">
-                <input name="keyboard" id="keyboard" required lay-verify="required" class="layui-input"
-                    placeholder="请输入关键字词" type="text">
+                <input name="keyboard" id="keyboard" ms-on-keyup="@onKeyUp" ms-duplex="@searchkey" required
+                    lay-verify="required" class="layui-input" placeholder="请输入关键字词" type="text">
                 <input name="show" value="title" type="hidden">
                 <input name="tempid" value="1" type="hidden">
                 <input name="tbname" value="news" type="hidden">
             </div>
             <div class="layui-inline">
-                <button class="layui-btn layui-btn-sm layui-btn-primary"><i class="layui-icon">&#xe615;</i></button>
+                <button ms-click="@onKeyUp" class="layui-btn layui-btn-sm layui-btn-primary"><i
+                        class="layui-icon">&#xe615;</i></button>
             </div>
         </form>
     </div>
@@ -28,21 +29,19 @@
     </div>
 
     <div class="column">
-        <h3 class="title-sidebar"><i class="layui-icon">&#xe756;</i>站长推荐</h3>
+        <h3 class="title-sidebar"><i class="layui-icon">&#xe756;</i>热门文章</h3>
         <ul class="layui-row layui-col-space5">
-            {% recommend key="srecommend",pageSize=8 %}
-            {% if srecommend.length > 0 %}
-            {% for item in srecommend %}
-            <li><a href="{{item.url}}">{{item.stitle}}</a></li>
+            {% hot pageSize=10 %}
+            {% for item in hot %}
+            <li><a href="{{item.url}}" target="_blank">{{item.stitle}}</a></li>
             {% endfor %}
-            {% endif %}
         </ul>
     </div>
     <div class="tags">
         <h3 class="title-sidebar"><i class="layui-icon">&#xe66e;</i>标签云</h3>
         <div>
 
-            {% hottags pageSize=20 %}
+            {% hottags pageSize=30 %}
             {% for tagItem in hottags %}
             <a class="layui-btn layui-btn-xs layui-btn-primary" href="{{tagItem.url}}"
                 target="_blank">{{tagItem.name}}</a>

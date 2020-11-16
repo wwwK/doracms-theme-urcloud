@@ -1,22 +1,18 @@
 <div class="layui-header header">
   <div class="layui-main">
     <a class="logo" href="/">
-      <img src="{{site.configs.siteLogo}}" alt="{{site.configs.siteName}}" />
+      {{site.configs.siteName}}
     </a>
     <ul class="layui-nav">
       <li class="layui-nav-item layui-hide-xs"><a href="/">网站首页</a></li>
-      {% navtree 'default' %}
-      {% for cate in navtree %}
-      {% if cate.children and cate.children.length>0 and cate.type == '1'%}
-      <li class="layui-nav-item layui-hide-xs"><a href="{{cate.url}}">{{cate.name}}</a>
-        <ul class="submenu">
-          {% for sonNav in cate.children %}
-          <li><a href="{{sonNav.url}}">{{sonNav.name}}</a></li>
-          {% endfor %}
-        </ul>
-      </li>
+      {% for cate in navigation %}
+      {% if cate.parentId == '0' %}
+      {% if cateInfo._id == cate._id %}
+      {% set navClass = 'layui-this'%}
       {% else %}
-      <li class="layui-nav-item layui-hide-xs"><a href="{{cate.url}}">{{cate.name}}</a></li>
+      {% set navClass = ''%}
+      {% endif %}
+      <li class="layui-nav-item layui-hide-xs {{navClass}}"><a href="{{cate.url}}">{{cate.name}}</a></li>
       {% endif %}
       {% endfor %}
 
@@ -31,7 +27,7 @@
           {% set navClass = ''%}
           {% endif %}
           <dd>
-            <a href="{{cate.name}}" title="{{cate.name}}">{{cate.url}}</a>
+            <a href="{{cate.url}}" title="{{cate.name}}">{{cate.name}}</a>
           </dd>
           {% endif %}
           {% endfor %}

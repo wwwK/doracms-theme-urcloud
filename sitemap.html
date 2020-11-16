@@ -1,0 +1,34 @@
+<!-- BEGIN SITEMAP -->
+{% extends "./default.html" %} {% block content %}
+<style>
+    .siteMap {
+        padding: 15px;
+    }
+
+    .siteMap ol li {
+        height: 25px;
+    }
+
+    .main {
+        background: #fff;
+        margin: 17.5px auto;
+    }
+</style>
+<div class="layui-container main">
+    <div class="layui-row">
+        <article class="siteMap">
+            <div class="row">
+                <ol>
+                    {% for item in siteMapList %}
+                    <li>
+                        <a href="{{item.url}}">{{item.title}}</a>
+                    </li>
+                    {% endfor %}
+                </ol>
+            </div>
+        </article>
+    </div>
+</div>
+{% endblock %}
+
+<!-- END SITEMAP -->
