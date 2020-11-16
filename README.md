@@ -4,7 +4,7 @@
 
 ### 演示站点
 
-[URCloud](https://www.urcloud.co)个人播客
+[URCloud](https://www.urcloud.co)
 
 ### 界面
 
