@@ -11,8 +11,7 @@
 - 首页(index.html)
 - 分类页(page.html)
 - 详情页(post.html)
-- 归档页（archive.html 单页）
-- 关于我（about.html 单页）
+- 关于我（template-stage-about/contentList.html 单页）
 - 网站地图（sitemap.html）
 - 404(404.html)
 
